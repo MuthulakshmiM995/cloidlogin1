@@ -8,6 +8,11 @@ package createlogin;
 import java.sql.*;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.sql.*;
+import javax.imageio.ImageIO;
+import javax.imageio.stream.ImageInputStream;
 /**
  *
  * @author HP
@@ -181,8 +186,10 @@ public class login1 extends javax.swing.JFrame {
                 field s = new field();
                 s.setVisible(true);
                 setVisible(false);*/
+
+
                new field(username.getText()).setVisible(true);
-               //DecryptPage.main(null);
+               DecryptPage.main(null);
             }
             else{
                 JOptionPane.showMessageDialog(null, "Username and Password not correct"); 

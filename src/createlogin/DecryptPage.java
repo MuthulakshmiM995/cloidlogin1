@@ -27,10 +27,23 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.EventQueue;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.File;
-
-public class DecryptPage extends JFrame {
-	
+import java.sql.Blob;
+import java.sql.DriverManager;
+import javax.imageio.ImageIO;
+import java.sql.*;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.sql.*;
+import javax.imageio.ImageIO;
+import javax.imageio.stream.ImageInputStream;
+public class DecryptPage extends JFrame {Connection con = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
 	private static final long serialVersionUID = 1L;
 
 	private JPanel contentPane;
@@ -136,6 +149,30 @@ public class DecryptPage extends JFrame {
 				Main.image2 = ImageFunctions.Display(Main.image2_file, "Image 2");
 			}
 		});
+                
+           /*  String sql = "Select images from users where username= 'muthu' ";
+        try{
+            con=DriverManager.getConnection("jdbc:derby://localhost:1527/mytest", "mytest", "mytest");
+            pst = con.prepareStatement(sql);
+            rs= pst.executeQuery();
+            if(rs.next()) {
+               /* JOptionPane.showMessageDialog(null, "Username and Password matched");
+                field s = new field();
+                s.setVisible(true);
+                setVisible(false);*/
+
+              /* Blob test=rs.getBlob("images");
+               int blobLength = (int) test.length();
+               byte[] blobAsBytes = test.getBytes(1, blobLength);
+               BufferedImage image = ImageIO.read( new ByteArrayInputStream( blobAsBytes ) );
+            }
+                   else{
+                JOptionPane.showMessageDialog(null, "Username and Password not correct"); 
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e); 
+        }*/
 		
 		// Choose a path for output to be saved
 		JButton btnSaveImage = new JButton("Save Image");
@@ -174,7 +211,7 @@ public class DecryptPage extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				// Decrypt and display the encoded images
-				Main.decrypt_image = ImageFunctions.Decrypt(Main.image1, Main.image2);
+				Main.decrypt_image = ImageFunctions.Decrypt(Main.image1, Main.image);
 				ImageFunctions.Display_Image(Main.decrypt_image, "Decrypted Image");
 				
 				// Save the decrypted image
