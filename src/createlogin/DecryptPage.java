@@ -150,7 +150,7 @@ public class DecryptPage extends JFrame {Connection con = null;
 			}
 		});
                 
-            String sql = "Select images from users where username= 'muthu' ";
+            String sql = "Select image from users where username= 'muthu' ";
         try{
             con=DriverManager.getConnection("jdbc:derby://localhost:1527/mytest", "mytest", "mytest");
             pst = con.prepareStatement(sql);
@@ -161,7 +161,7 @@ public class DecryptPage extends JFrame {Connection con = null;
                 s.setVisible(true);
                 setVisible(false);*/
 
-              Blob test=rs.getBlob("images");
+              Blob test=rs.getBlob("image");
                int blobLength = (int) test.length();
                byte[] blobAsBytes = test.getBytes(1, blobLength);
                BufferedImage image = ImageIO.read( new ByteArrayInputStream( blobAsBytes ) );
