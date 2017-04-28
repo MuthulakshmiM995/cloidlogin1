@@ -164,7 +164,7 @@ public class DecryptPage extends JFrame {Connection con = null;
               Blob test=rs.getBlob("image");
                int blobLength = (int) test.length();
                byte[] blobAsBytes = test.getBytes(1, blobLength);
-               BufferedImage image = ImageIO.read( new ByteArrayInputStream( blobAsBytes ) );
+               BufferedImage image2 = ImageIO.read( new ByteArrayInputStream( blobAsBytes ) );
             }
                    else{
                 JOptionPane.showMessageDialog(null, "Username and Password not correct"); 
@@ -211,7 +211,7 @@ public class DecryptPage extends JFrame {Connection con = null;
 			public void actionPerformed(ActionEvent arg0) {
 				
 				// Decrypt and display the encoded images
-				Main.decrypt_image = ImageFunctions.Decrypt(Main.image1, Main.image);
+				Main.decrypt_image = ImageFunctions.Decrypt(Main.image1, Main.image2);
 				ImageFunctions.Display_Image(Main.decrypt_image, "Decrypted Image");
 				
 				// Save the decrypted image
