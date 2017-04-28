@@ -150,7 +150,7 @@ public class DecryptPage extends JFrame {Connection con = null;
 			}
 		});*/
                 
-            String sql = "Select image from users where username= 'muthu' ";
+            String sql = "Select image from users where username= ? ";
         try{
             con=DriverManager.getConnection("jdbc:derby://localhost:1527/mytest", "mytest", "mytest");
             pst = con.prepareStatement(sql);
