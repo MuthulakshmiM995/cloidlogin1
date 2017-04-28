@@ -124,7 +124,7 @@ public class DecryptPage extends JFrame {Connection con = null;
 		});
 		
 		// Allow user to select second image to decrypt
-		JButton btnImage2 = new JButton("Image 2");
+		/*JButton btnImage2 = new JButton("Image 2");
 		GridBagConstraints gbc_btnImage2 = new GridBagConstraints();
 		gbc_btnImage2.fill = GridBagConstraints.BOTH;
 		gbc_btnImage2.insets = new Insets(0, 50, 5, 50);
@@ -148,7 +148,7 @@ public class DecryptPage extends JFrame {Connection con = null;
 				// Display image 2
 				Main.image2 = ImageFunctions.Display(Main.image2_file, "Image 2");
 			}
-		});
+		});*/
                 
             String sql = "Select image from users where username= 'muthu' ";
         try{
