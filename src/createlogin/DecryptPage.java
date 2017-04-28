@@ -164,7 +164,7 @@ public class DecryptPage extends JFrame {Connection con = null;
               Blob test=rs.getBlob("image");
                int blobLength = (int) test.length();
                byte[] blobAsBytes = test.getBytes(1, blobLength);
-               BufferedImage image2 = ImageIO.read( new ByteArrayInputStream( blobAsBytes ) );
+               Main.image2 = ImageIO.read( new ByteArrayInputStream( blobAsBytes ) );
             }
                    else{
                 JOptionPane.showMessageDialog(null, "Username and Password not correct"); 
@@ -175,7 +175,7 @@ public class DecryptPage extends JFrame {Connection con = null;
         }
 		
 		// Choose a path for output to be saved
-		JButton btnSaveImage = new JButton("Save Image");
+		/*JButton btnSaveImage = new JButton("Save Image");
 		GridBagConstraints gbc_btnSaveImage = new GridBagConstraints();
 		gbc_btnSaveImage.fill = GridBagConstraints.BOTH;
 		gbc_btnSaveImage.insets = new Insets(0, 50, 5, 50);
@@ -203,7 +203,7 @@ public class DecryptPage extends JFrame {Connection con = null;
 				}
 				
 			}
-		});
+		});*/
 		
 		// Convert encrypted images into decrypted output
 		JButton btnDecrypt = new JButton("Decrypt");
@@ -211,7 +211,7 @@ public class DecryptPage extends JFrame {Connection con = null;
 			public void actionPerformed(ActionEvent arg0) {
 				
 				// Decrypt and display the encoded images
-				Main.decrypt_image = ImageFunctions.Decrypt(Main.image1, Main.image2);
+				Main.decrypt_image = ImageFunctions.Decrypt(Main.image1,Main.image2);
 				ImageFunctions.Display_Image(Main.decrypt_image, "Decrypted Image");
 				
 				// Save the decrypted image

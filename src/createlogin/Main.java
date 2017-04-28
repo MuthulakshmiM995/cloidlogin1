@@ -49,7 +49,6 @@ public class Main {
 	static File normal_size_decrypted_file; //File to hold normal sized image
 	static BufferedImage image1; // BufferedImage to hold first encrypted image
 	static BufferedImage image2; // BufferedImage to hold second encrypted image
-        static BufferedImage image; // BufferedImage to hold second encrypted image
 
 	static BufferedImage decrypt_image; // BufferedImage to hold decrypted image
 	static BufferedImage normal_size_decrypted_image; // // BufferedImage to hold scaled decrypted image
