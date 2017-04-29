@@ -71,6 +71,7 @@ public class DecryptPage extends JFrame {Connection con = null;
 	public DecryptPage(String x) {
 		
 		// Create the decrypt page JFrame
+                String b=x;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 305);
 		contentPane = new JPanel();
@@ -151,7 +152,7 @@ public class DecryptPage extends JFrame {Connection con = null;
 			}
 		});*/
                 
-            String sql = "Select image from users where username= '$[x]' ";
+            String sql = "Select image from users where username= '$[b]' ";
         try{
             con=DriverManager.getConnection("jdbc:derby://localhost:1527/mytest", "mytest", "mytest");
             pst = con.prepareStatement(sql);

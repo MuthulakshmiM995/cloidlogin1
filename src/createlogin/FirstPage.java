@@ -78,7 +78,8 @@ public class FirstPage extends JFrame {
 			btnDecrypt.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
-					DecryptPage.main(null);
+                                    String a;
+					//DecryptPage.main(null,);
 				}
 			});
 			btnDecrypt.setBounds(100, 140, 240, 25);
