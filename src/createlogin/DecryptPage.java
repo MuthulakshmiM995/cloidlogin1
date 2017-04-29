@@ -51,11 +51,11 @@ public class DecryptPage extends JFrame {Connection con = null;
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args,PreparedStatement x) {
+	public static void main(String[] args,String x) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-                                        PreparedStatement a=x;
+                                        String a=x;
 					DecryptPage frame = new DecryptPage(a);
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -68,10 +68,10 @@ public class DecryptPage extends JFrame {Connection con = null;
 	/**
 	 * Create the frame.
 	 */
-	public DecryptPage(PreparedStatement x) {
+	public DecryptPage(String x) {
 		
 		// Create the decrypt page JFrame
-                PreparedStatement b=x;
+                String b=x;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 305);
 		contentPane = new JPanel();
