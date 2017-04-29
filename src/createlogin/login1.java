@@ -179,6 +179,7 @@ public class login1 extends javax.swing.JFrame {
             con=DriverManager.getConnection("jdbc:derby://localhost:1527/mytest", "mytest", "mytest");
             pst = con.prepareStatement(sql);
             pst.setString(1, username.getText());
+            String a=username.getText();
             pst.setString(2, password.getText());
             rs= pst.executeQuery();
             if(rs.next()) {
@@ -189,7 +190,7 @@ public class login1 extends javax.swing.JFrame {
 
 
                new field(username.getText()).setVisible(true);
-               DecryptPage.main(null);
+               DecryptPage.main(null,a);
             }
             else{
                 JOptionPane.showMessageDialog(null, "Username and Password not correct"); 

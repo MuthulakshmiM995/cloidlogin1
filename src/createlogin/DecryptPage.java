@@ -51,12 +51,13 @@ public class DecryptPage extends JFrame {Connection con = null;
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args,String x) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					DecryptPage frame = new DecryptPage();
 					frame.setVisible(true);
+                                        String b=x;
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -150,7 +151,7 @@ public class DecryptPage extends JFrame {Connection con = null;
 			}
 		});*/
                 
-            String sql = "Select image from users where username= 'muthu' ";
+            String sql = "Select image from users where username= b ";
         try{
             con=DriverManager.getConnection("jdbc:derby://localhost:1527/mytest", "mytest", "mytest");
             pst = con.prepareStatement(sql);
