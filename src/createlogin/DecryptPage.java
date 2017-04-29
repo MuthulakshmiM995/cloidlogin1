@@ -55,8 +55,7 @@ public class DecryptPage extends JFrame {Connection con = null;
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-                                        String a=x;
-					DecryptPage frame = new DecryptPage(a);
+					DecryptPage frame = new DecryptPage(x);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -151,8 +150,9 @@ public class DecryptPage extends JFrame {Connection con = null;
 				Main.image2 = ImageFunctions.Display(Main.image2_file, "Image 2");
 			}
 		});*/
-                
-            String sql = "Select image from users where username= '$[b]' ";
+             String a=x; 
+             System.out.println(a);
+            String sql = "Select image from users where username= $[a] ";
         try{
             con=DriverManager.getConnection("jdbc:derby://localhost:1527/mytest", "mytest", "mytest");
             pst = con.prepareStatement(sql);

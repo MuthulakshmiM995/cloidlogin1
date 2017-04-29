@@ -180,8 +180,9 @@ public class login1 extends javax.swing.JFrame {
             con=DriverManager.getConnection("jdbc:derby://localhost:1527/mytest", "mytest", "mytest");
             pst = con.prepareStatement(sql);
             pst.setString(1, username.getText());
-            a=username.getText();
             pst.setString(2, password.getText());
+            String a=username.getText();
+            System.out.println(a);
             rs= pst.executeQuery();
             if(rs.next()) {
                /* JOptionPane.showMessageDialog(null, "Username and Password matched");
@@ -226,19 +227,19 @@ public class login1 extends javax.swing.JFrame {
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
         if(jCheckBox1.isSelected()){
-          password.setEchoChar((char)0);  
+            password.setEchoChar((char)0);
         }else{
-          password.setEchoChar('*');
+            password.setEchoChar('*');
         }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
-
-    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_usernameActionPerformed
 
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordActionPerformed
+
+    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameActionPerformed
 
     /**
      * @param args the command line arguments
