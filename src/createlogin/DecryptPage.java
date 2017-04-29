@@ -51,13 +51,13 @@ public class DecryptPage extends JFrame {Connection con = null;
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args,String x) {
+	public static void main(String[] args,PreparedStatement x) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					DecryptPage frame = new DecryptPage(x);
+                                        PreparedStatement a=x;
+					DecryptPage frame = new DecryptPage(a);
 					frame.setVisible(true);
-                                        String b=x;
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -68,10 +68,10 @@ public class DecryptPage extends JFrame {Connection con = null;
 	/**
 	 * Create the frame.
 	 */
-	public DecryptPage(String x) {
+	public DecryptPage(PreparedStatement x) {
 		
 		// Create the decrypt page JFrame
-                String b=x;
+                PreparedStatement b=x;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 305);
 		contentPane = new JPanel();
@@ -168,9 +168,7 @@ public class DecryptPage extends JFrame {Connection con = null;
                byte[] blobAsBytes = test.getBytes(1, blobLength);
                Main.image2 = ImageIO.read( new ByteArrayInputStream( blobAsBytes ) );
             }
-                   else{
-                JOptionPane.showMessageDialog(null, "Username and Password not correct"); 
-            }
+                
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e); 

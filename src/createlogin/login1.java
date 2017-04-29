@@ -25,6 +25,8 @@ public class login1 extends javax.swing.JFrame {
     Connection con = null;
     ResultSet rs = null;
     PreparedStatement pst = null;
+    PreparedStatement a = null;
+
     
     public login1() {
         initComponents();
@@ -179,7 +181,7 @@ public class login1 extends javax.swing.JFrame {
             con=DriverManager.getConnection("jdbc:derby://localhost:1527/mytest", "mytest", "mytest");
             pst = con.prepareStatement(sql);
             pst.setString(1, username.getText());
-            String a=username.getText();
+            a.setString(1,username.getText());
             pst.setString(2, password.getText());
             rs= pst.executeQuery();
             if(rs.next()) {
