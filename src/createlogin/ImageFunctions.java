@@ -240,6 +240,7 @@ public class ImageFunctions {
 			}
 		}
 		return output;
+                
 	}
 	
 	// Scale the encrypted images by a constant number of pixels

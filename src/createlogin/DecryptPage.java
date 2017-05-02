@@ -72,7 +72,7 @@ public class DecryptPage extends JFrame {Connection con = null;
 		// Create the decrypt page JFrame
                 String b=x;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 305);
+		setBounds(150, 150, 450, 305);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -86,7 +86,7 @@ public class DecryptPage extends JFrame {Connection con = null;
 		// Create decrypt page title
 		Border loweredetched = BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
 		JLabel lblDecrypt = new JLabel("Decryption");
-		lblDecrypt.setFont(new Font("Dialog", Font.BOLD, 16));
+		lblDecrypt.setFont(new Font("Dialog", Font.BOLD, 24));
 		lblDecrypt.setBorder(loweredetched);
 		lblDecrypt.setHorizontalAlignment(SwingConstants.CENTER);
 		GridBagConstraints gbc_lblDecrypt = new GridBagConstraints();
@@ -97,10 +97,10 @@ public class DecryptPage extends JFrame {Connection con = null;
 		contentPane.add(lblDecrypt, gbc_lblDecrypt);
 		
 		// Allows user to select first image to decrypt
-		JButton btnImage1 = new JButton("Image 1");
+		JButton btnImage1 = new JButton("Upload your share");
 		GridBagConstraints gbc_btnImage1 = new GridBagConstraints();
 		gbc_btnImage1.fill = GridBagConstraints.BOTH;
-		gbc_btnImage1.insets = new Insets(0, 50, 5, 50);
+		gbc_btnImage1.insets = new Insets(20, 50, -20, 50);
 		gbc_btnImage1.gridx = 0;
 		gbc_btnImage1.gridy = 1;
 		contentPane.add(btnImage1, gbc_btnImage1);
@@ -227,7 +227,8 @@ public class DecryptPage extends JFrame {Connection con = null;
 		gbc_btnDecrypt.fill = GridBagConstraints.BOTH;
 		gbc_btnDecrypt.insets = new Insets(0, 50, 0, 50);
 		gbc_btnDecrypt.gridx = 0;
-		gbc_btnDecrypt.gridy = 4;
+		gbc_btnDecrypt.gridy = 3;
 		contentPane.add(btnDecrypt, gbc_btnDecrypt);
-	}
+                //new field(a).setVisible(true);	
+        }
 }
