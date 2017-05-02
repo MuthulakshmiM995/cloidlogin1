@@ -219,7 +219,7 @@ public class DecryptPage extends JFrame {Connection con = null;
 
 				// Create, display, and save scaled image (same size as original image
 				Main.normal_size_decrypted_image = ImageFunctions.Shrink(Main.decrypt_image);
-				ImageFunctions.Display_Image(Main.normal_size_decrypted_image, "Regular Sized Decrypted Image");				
+				//ImageFunctions.Display_Image(Main.normal_size_decrypted_image, "Regular Sized Decrypted Image");				
 				//ImageFunctions.Save(Main.normal_size_decrypted_image, Main.normal_size_decrypted_file);
 			}
 		});
